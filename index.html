@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ALZHEIMER'S DESEASE</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+    <header id="nav" class="br-10">
+        <div class="flex">
+            <li>
+                <a type="button" data-tab-target="#home" class="homeBtn" href="#" title="home"><strong>HOME</strong></a>
+            </li>
+            <li>
+                <a type="button" data-tab-target="#about" class="aboutBtn" href="#" title="about"><strong>ABOUT</strong></a>
+            </li>
+            <li>
+                <a type="button" data-tab-target="#information" class="infoBtn" href="#" title="information"><strong>INFORMATION</strong></a>
+            </li>
+        </div>
+    </header>
+
+    <div class="tab-content">
+        <div class="bg-img">
+            <div class="text br-10">
+                <h1 class="w-100 text-center">RECOGNITION ALZHEIMER'S DESEASE</h1>
+            </div>
+        </div>
+        <div id="home" class="home active" data-tab-content>
+            <fieldset class="form pd-16 br-10 w-100">
+                <h4>Your Information</h4>
+                <div class="flex">
+                    <div class="col">
+                        <div class="form-group block">
+                            <div class="label">
+                                <label for="username"><strong><i class="fa-solid fa-user"></i>Name: </strong></label>
+                            </div>
+                            <input class="w-80" type="text" placeholder="Your name here" name="username" id="username" required onkeyup="document.getElementById('get-name').innerText = this.value">
+                        </div>
+                        <div class="form-group block">
+                            <div class="label">
+                                <label for="age"><strong><i class="fa-solid fa-user-gear"></i>Age: </strong></label>
+                            </div>
+                            <input class="w-80" type="number" placeholder="Your age here" name="age" id="age" onkeyup="document.getElementById('get-age').innerText = this.value">
+                        </div>
+                        <div class="form-group block">
+                            <div class="label">
+                                <label for="gender"><strong><i class="fa-solid fa-mars-and-venus"></i>Gender: </strong></label>
+                            </div>
+                            <div class="flex w-80">
+                                <div class="input">
+                                    <input type="radio" name="gender" id="gender1" value="Male"><label class="mt-7 f-17" for="gender1">&nbsp;Male</label>
+                                </div>
+                                <div class="input">
+                                    <input type="radio" name="gender" id="gender2" value="Female"><label class="mt-7 f-17" for="gender2">&nbsp;Female</label>
+                                </div>
+                                <div class="input">
+                                    <input type="radio" name="gender" id="gender3" value="Other"><label class="mt-7 f-17" for="gender3">&nbsp;Other</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group" style="display: flex;">
+                            <div class="label" style="width: 44%">
+                                <label for="date"><strong><i class="fa-solid fa-calendar"></i>Date:</strong></label>
+                            </div>
+                            <div class="input col">
+                                <input type="date" name="date" id="date">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="check col">
+                        <h3>Upload your X-ray photo here</h3>
+                        <div class="upload br-10">
+                            <input class="btn" type="file" id="sortpicture" name="sortpic" onchange="chooseFile(this)"
+                               accept="image/gif, image/jpeg, image/jpg, image/png">
+                            <div class="flex">
+                                <button class="br-10" id="upload">Upload</button>
+                                <button class="br-10" onclick="window.location.reload();">RESET</button>
+                            </div>    
+        
+                        </div>
+                    </div>
+                </div>
+            </fieldset>
+        
+            <div id="response" class="bill pd-16 text-white br-10">
+                <header>
+                    <span style="float: right;">Author: PNDT</span>
+                    <div style="clear: both;"></div>
+                    <h2 class="text-center">MEDICAL BILL</h1>
+                </header>
+                <main>
+                    <div class="header">
+                        <p>Name: <span id="get-name"></span></p>
+                        <p>Age: <span id="get-age"></span></p>
+                        <p>Today: <span id="get-date"></span></p>
+                    </div>
+                    <div class="main">
+                        <table class="w-100">
+                            <thead style="background: #2F71C1; color: #fff">
+                                <tr>
+                                    <th class="col">Your X-ray Photo</th>
+                                    <th class="col">Your problem</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="br text-center">
+                                        <div class="upload-image">
+                                            <img src="" alt="" id="image" width="128" height="128" >
+                                        </div>
+                                    </td>
+                                    <td class="text-center">
+                                        <div class="text">
+                                            <span id="check"></span>
+                                            <span id="desc"></span>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <footer>
+                        <p class="text-center">Thank you for your Business</p>
+                    </footer>
+                </main>
+            </div>
+            <footer class="flex">
+                <div class="col">
+                    <span>Recognition Alzheimer's Desease 2022</span>
+                </div>
+                <div class="col right">
+                    <i class="fa-brands fa-facebook"></i>
+                    <i class="fa-brands fa-youtube"></i>
+                    <i class="fa-brands fa-twitter"></i>
+                    <i class="fa-brands fa-google"></i>
+                </div>
+            </footer>
+        </div>
+    
+        <div id="about" class="br-10 pd-16 about" data-tab-content>
+            <a title="MyGitHub" href="https://github.com/PhamNguyenDuyTien/Alzheimer" target="_blank"><strong>Github</strong></a>
+            <a title="MyPoster" href=""><strong>Poster</strong></a>
+            <a title="MyReport" href=""><strong>Report</strong></a>
+            <a title="MyAlgorithm" href=""><strong>Algorithm</strong></a>
+        </div>
+    
+        <div id="information" class="br-10 pd-16 information" data-tab-content>
+            <div class="image">
+                <img class="br-10" src="./img/MatTriNho.jpg" alt="MatTriNho">
+            </div>
+            <h5>Giới thiệu:</h5>
+            <p>Bệnh Alzheimer’s (AHLZ-high-merz) là một bệnh lý về não 
+                tác động đến trí nhớ, suy nghĩ và hành vi. Bệnh Alzheimer’s 
+                không phải là bệnh lão khoa thông thường hoặc bệnh thần kinh.</p>
+                <h5>Là dạng phổ biến nhất của hội chứng suy giảm trí nhớ</h5>
+                <p>Hội chứng suy giảm trí nhớ là thuật ngữ tổng quát về việc mất 
+                    trí nhớ và các khả năng tư duy nghiêm trọng đến nỗi gây trở ngại 
+                    cho cuộc sống thường ngày. Bệnh Alzheimer chiếm khoảng 60% đến 80% trong những bệnh làm suy giảm trí nhớ.</p>
+            <span class="author">Pham Nguyen Duy Tien</span>
+            <div style="clear: both;"></div>
+        </div>
+    </div>
+
+
+
+    <!-- Active tabs -->
+    <script>
+        const tabs = document.querySelectorAll('[data-tab-target]');
+        const tabContents = document.querySelectorAll('[data-tab-content]');
+
+        tabs.forEach(tab =>{
+            tab.addEventListener('click',()=>{
+                const target = document.querySelector(tab.dataset.tabTarget)
+                tabContents.forEach(tabContent =>{
+                    tabContent.classList.remove('active')
+                })
+                target.classList.add('active')
+            })
+        })
+    </script>
+
+    <script>
+        let y = new Date();
+        let m = new Date();
+        let d = new Date();
+
+        let year = y.getFullYear();
+        let month = m.getMonth() + 1;
+        let day = d.getDate();
+
+        document.getElementById("get-date").innerHTML = day + "/" + month + "/" + year;
+    </script>
+
+
+    <!-- Display images -->
+    <script>
+        function chooseFile(fileInput){
+            if(fileInput.files && fileInput.files[0]){
+                var reader = new FileReader();
+                reader.onload = function(e){
+                    $('#image').attr('src', e.target.result);
+                }
+                reader.readAsDataURL(fileInput.files[0]);
+            }
+        }
+    </script>
+    
+
+    <!-- Display Bill -->
+    <script>
+        $("#upload").on('click',function(){
+            const billModal = document.querySelector(".bill");
+            billModal.classList.add('open');
+
+            var file_data = $("#sortpicture").prop("files")[0];
+            var form_data = new FormData();
+            form_data.append("file", file_data);
+    
+            $.ajax({
+                url: 'http://127.0.0.1:8000/upload',
+                cache: false,
+                contentType: false,
+                processData: false,
+                data: form_data,
+                type: 'post',
+                success: function(api_resp){
+                    document.getElementById("check").innerHTML = api_resp;
+                    // if(api_resp == 'None Demented'){
+                    //     document.getElementById("desc").innerText = "Congrats!";
+                    // }
+                    // else if(api_resp == 'Moderate Demented'){
+                    //     document.getElementById("desc").innerText = "Sorry!"
+                    // }
+                },
+                error: function(err){
+                    alert(err.responseText);
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+
+
+
+
